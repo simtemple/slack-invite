@@ -1,0 +1,21 @@
+{
+  "name": "@directus/slack-invite",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tiny website with a form that will invite the person into the Directus Slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/directus/slack-invite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/directus/slack-invite/issues"
+  },
+  "homepage": "https://github.com/directus/slack-invite#readme"
+}
