@@ -5,7 +5,7 @@
   "description": "Tiny website with a form that will invite the person into the Directus Slack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:lambda": "netlify-lambda build lambda"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/directus/slack-invite#readme",
   "dependencies": {
     "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^1.4.13"
   }
 }
