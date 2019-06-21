@@ -6,16 +6,32 @@
   <link rel="stylesheet" href="/index.css">
   <script src="/index.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@directus/format-title@2.3.1/dist/format-title.umd.js" defer></script>
 </head>
 <body>
-  <h1>Automatic invites to the Directus public Slack channel!</h1>
+  <main>
+    <img src="./logo.svg" alt="Directus Logo">
+    <h1>Automatic invites to the Directus<br>public Slack channel!</h1>
 
-  <form name="email">
-    <input id="email" type="email" name="email" value="" placeholder="Enter Your Email Address">
-    <div class="g-recaptcha" data-sitekey="6LeNx5EUAAAAALxB6XApXNF_-0tkdKXGvki8lrN5"></div>
-    <button type="submit">Join</button>
-  </form>
+    <form name="email">
+      <input id="email" type="email" name="email" value="" placeholder="Enter Your Email Address">
+      <div class="g-recaptcha" data-sitekey="6LeNx5EUAAAAALxB6XApXNF_-0tkdKXGvki8lrN5"></div>
+      <button type="submit">Join</button>
+    </form>
 
-  <a href="https://www.directus.io">Visit directus.io</a>
+    <div id="success">
+      <p>You've got mail!</p>
+    </div>
+
+    <div id="error">
+      <p>Something went wrong while inviting you..</p>
+      <output></output>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.directus.io">visit directus.io</a>
+  </footer>
 </body>
 </html>

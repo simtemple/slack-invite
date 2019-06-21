@@ -1,5 +1,7 @@
 (function() {
   var form = document.querySelector('form');
+  var submitButtonEl = form.querySelector('button');
+  var errorOutput = document.querySelector('output');
 
   form.addEventListener('submit', onFormSubmit);
 
@@ -14,14 +16,24 @@
       email: email,
       captcha: captcha
     };
+   
+    submitButtonEl.setAttribute('disabled', 'disabled');
+    submitButtonEl.textContent = 'Joining...';
 
     post('/.netlify/functions/to-slack', data, onPost);
 
     event.preventDefault();
   }
 
-  function onPost(error, data) {
-    console.log(error, data);
+  function onPost(data) {
+    var succeeded = data.success === true;
+
+    if (succeeded) {
+      form.classList.add('success');
+    } else {
+      form.classList.add('fail');
+      errorOutput.textContent = formatTitle(data.message);
+    }
   }
 
   function post(url, data, callback) {
@@ -30,11 +42,7 @@
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onreadystatechange = function(event) {
       if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          callback(null, JSON.parse(xhr.responseText));
-        } else {
-          callback(xhr.statusText);
-        }
+        callback(JSON.parse(xhr.responseText));
       }
     };
 
