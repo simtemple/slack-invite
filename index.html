@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <title>Directus Slack Invite</title>
   <link rel="stylesheet" href="/index.css">
+  <script src="/index.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" defer></script>
 </head>
 <body>
   <h1>Automatic invites to the Directus public Slack channel!</h1>
 
-  <form name="email" method="POST" action="/success" data-netlify="true">
-    <input type="email" name="email" value="" placeholder="Enter Your Email Address">
+  <form name="email">
+    <input id="email" type="email" name="email" value="" placeholder="Enter Your Email Address">
+    <div class="g-recaptcha" data-sitekey="6LeNx5EUAAAAALxB6XApXNF_-0tkdKXGvki8lrN5"></div>
     <button type="submit">Join</button>
   </form>
 

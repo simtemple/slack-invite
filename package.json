@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/directus/slack-invite/issues"
   },
-  "homepage": "https://github.com/directus/slack-invite#readme"
+  "homepage": "https://github.com/directus/slack-invite#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }
